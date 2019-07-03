@@ -84,11 +84,19 @@ function printMilliseconds() {
 
 
 function printSplit() {
-
+  let oList = document.querySelector("#splits")
+  let newLine = document.createElement('li');
+  oList.appendChild(newLine);
+  newLine.innerHTML = (minDec.innerHTML + minUni.innerHTML + ":" + secDec.innerHTML + secUni.innerHTML).toString();
 }
 
 function clearSplits() {
-
+  let orderedList = document.querySelector("#splits");
+  let listCollection = document.querySelectorAll("li");
+  let listArray = Array.from(listCollection);
+  listCollection.forEach(function(el){
+    orderedList.removeChild(el);
+  });
 }
 
 function setStopBtn() {
